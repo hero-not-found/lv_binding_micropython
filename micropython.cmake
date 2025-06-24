@@ -33,7 +33,7 @@ all_lv_bindings()
 # # # this way the bindings (and transitively lvgl_interface) get proper compilation flags
 # target_link_libraries(usermod INTERFACE usermod_lvgl)
 
-file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/*.c)
+file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/*.c ${CMAKE_CURRENT_LIST_DIR}/fonts/*.c)
 
 add_library(lvgl_interface INTERFACE)
 

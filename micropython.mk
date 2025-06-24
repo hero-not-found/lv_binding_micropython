@@ -60,6 +60,7 @@ $(info    LV_CONF_PATH is $(LV_CONF_PATH))
 
 
 LVGL_DIR = $(LVGL_BINDING_DIR)/lvgl
+CUSTOM_FONT_DIR = $(LVGL_BINDING_DIR)/fonts
 LVGL_GENERIC_DRV_DIR = $(LVGL_BINDING_DIR)/driver/generic
 INC += -I$(LVGL_BINDING_DIR)
 ALL_LVGL_SRC = $(shell find $(LVGL_DIR) -type f -name '*.h') $(LV_CONF_PATH)
@@ -87,5 +88,5 @@ LVGL_MPY: $(LVGL_MPY)
 
 CFLAGS_USERMOD += -Wno-unused-function
 CFLAGS_EXTRA += -Wno-unused-function
-SRC_USERMOD_LIB_C += $(subst $(TOP)/,,$(shell find $(LVGL_DIR)/src $(LVGL_DIR)/examples $(LVGL_GENERIC_DRV_DIR) -type f -name "*.c"))
+SRC_USERMOD_LIB_C += $(subst $(TOP)/,,$(shell find $(LVGL_DIR)/src $(LVGL_DIR)/examples $(CUSTOM_FONT_DIR) $(LVGL_GENERIC_DRV_DIR) -type f -name "*.c"))
 SRC_USERMOD_C += $(LVGL_MPY)
